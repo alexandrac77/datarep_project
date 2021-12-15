@@ -4,13 +4,14 @@ import {Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
-// some comments
+
 class CafeItem extends Component {
     constructor(){
         super();
         this.DeleteCafe = this.DeleteCafe.bind(this);
     }
 
+    // delete review
     DeleteCafe(){
         console.log('Delete: '+this.props.cafe._id);
 
@@ -25,7 +26,7 @@ class CafeItem extends Component {
     render() {
         return (
             <div>
-                {/* some comments  */}
+                {/* card displaying the customer review. Review can be edited or deleted */}
                 <Card>
                     <Card.Header>{this.props.cafe.Name}</Card.Header>
                     <Card.Body>
@@ -36,8 +37,8 @@ class CafeItem extends Component {
                             </footer>
                         </blockquote>
                     </Card.Body>
-<Link to={"/edit/" +this.props.cafe._id} className="btn btn-primary">Edit</Link>
-<Button variant="danger" onClick={this.DeleteCafe}>Delete</Button>
+                    <Link to={"/edit/" +this.props.cafe._id} className="btn btn-dark">Edit</Link>
+                    <Button variant="danger" onClick={this.DeleteCafe}>Delete</Button>
                 </Card>
             </div>
         );

@@ -46,39 +46,86 @@ class CafeRes extends Component
             <div>
             <div
             style={{
-                backgroundColor: 'Olive', height:"50px" ,fontFamily:"Abril Fatface"}}>
-
+                backgroundColor: 'Olive', height:"90px" ,fontFamily:"Abril Fatface"}}>
                 <h1>Top Vegan Cafes & Restaurants in Galway</h1>
-                {/*{this.state.mycafes.map(restaurant=><li key={restaurant._id}></li>)} */}
-                <Cafes restaurants={this.state.mycafes} ReloadData={this.ReloadData}></Cafes>
-
             </div>
-                <br></br>
-                <br></br>
+
+            <div style={{color:'Olive'}}>
+                <br/>
+                <h4>scroll to the bottom of the page to see reviews </h4>
+                <h4>for the featured cafes & restaurants </h4>
+                <br/>
+            </div>
+
             <div style={{
+                backgroundColor: 'LightGrey',
                 fontFamily:"Meow Script"}}>
+                <br/>
+                <br/>
                 <h1>Milano</h1>
+                <br/>
                 <img height="500" src={milano}/>
+                <br/>
+                <br/>
+                <br/>
             </div>
 
-            <div>
+            <div style={{
+                backgroundColor: 'Linen',
+                fontFamily:"Meow Script"}}>
                 <h1>Temple Cafe</h1>
+                <br/>
                 <img height="500" src={templee}/>
-            </div>
-            <div>
-                <h1>Greens & Co</h1>
-                <img height="500" src={greens}/>
+                <br/>
+                <br/>
+                <br/>
             </div>
 
-            <div>
+            <div
+            style={{
+                backgroundColor: 'LightGrey',
+                fontFamily:"Meow Script"}}>
                 <h1>Vegano Deli</h1>
+                <br/>
                 <img height="500" src={vegano}/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+
+            <div
+            style={{
+                backgroundColor: 'Linen',
+                fontFamily:"Meow Script"}}>
+                <h1>Lighthouse Cafe</h1>
+                <br/>
+                <img height="500" src={lighthouse}/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+
+            <div
+            style={{
+                backgroundColor: 'LightGrey',
+                fontFamily:"Meow Script"}}>
+                <h1>Greens & Co</h1>
+                <br/>
+                <img height="500" src={greens}/>
+                <br/>
+                <br/>
+                <br/>
             </div>
 
             <div>
-                <h1>Lighthouse Cafe</h1>
-                <img height="500" src={lighthouse}/>
+            <br/>
+            <br/>
+            <br/>
+                <h2> Customer Reviews</h2>
             </div>
+
+                <div><Cafes restaurants={this.state.mycafes} ReloadData={this.ReloadData}></Cafes></div>
+
             </div>
         );
     }

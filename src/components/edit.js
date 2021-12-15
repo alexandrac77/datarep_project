@@ -70,28 +70,32 @@ class Edit extends Component {
 
     render() {
         return (
-            <div>
-                <h1>edit</h1>
+            <div
+            style={{
+                backgroundColor: 'Lavender', height:"90px" ,fontFamily:"Abril Fatface"}}>
+                <h1>Edit Review</h1>
+                <p>Make changes to your review below & press submit when finished to save.</p>
+                <br/><br/>
                 <form onSubmit={this.handleSubmit}>
-
-                    <div className="form-group">
-                        <label>Edit Cafe Name: </label>
+                    
+                    <div className="form-group" style={{color:'red'}}>
+                        <h3>Edit Cafe Name: </h3>
                         <input type="text"
                             className="form-control"
                             value={this.state.Name}
                             onChange={this.onChangeCafeName}
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Edit Description: </label>
+                    <div className="form-group" style={{color:'red'}}>
+                        <h3>Edit Description: </h3>
                         <input type="text"
                             className="form-control"
                             value={this.state.Desc}
                             onChange={this.onChangeCafeDesc}
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Edit Rating: </label>
+                    <div className="form-group" style={{color:'red'}}>
+                        <h3>Edit Rating: </h3>
                         <textarea type="text"
                             className="form-control"
                             value={this.state.Rating}
@@ -99,8 +103,8 @@ class Edit extends Component {
                         />
                     </div>
                     <div>
-                        <input type="submit" value="Edit Review"
-                            className="btn btn-primary"></input>
+                        <input type="submit" value="Submit"
+                            className="btn btn-danger"></input>
                     </div>
                 </form>
             </div>

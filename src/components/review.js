@@ -21,7 +21,7 @@ class Review extends Component {
     handleSubmit(event) {
         console.log(
             "Name: " + this.state.Name +
-            " Desc: " + this.state.Desc +
+            "Desc: " + this.state.Desc +
             "Rating: " + this.state.Rating);
 
         const NewCafe = {
@@ -67,39 +67,37 @@ class Review extends Component {
     render() {
         return (
 
-            <div>
-                <h1>write review</h1>
+            <div
+            style={{
+                backgroundColor: 'Lavender', height:"90px" ,fontFamily:"Abril Fatface"}}>
+                <h1>Write a Review</h1>
+                <h5>detail your experience(s) at the top vegan cafes / retaurants in Galway.</h5>
+                <br/><br/>
                 <form onSubmit={this.handleSubmit}>
 
                     <div className="form-group">
-                        
-                            
-                                name
-                                <input type="text"
-                                    className="form-control"
-                                    value={this.state.Name}
-                                    onChange={this.onChangeCafeName}
-                                    onChangeText = {(text)=> this.setState({Name:text})} />
-                                
-                            
-                        
-                    </div>
-                    <div>
-                                desc
-                                <input type="text"
-                                    className="form-control"
-                                    value={this.state.Desc}
-                                    onChange={this.onChangeCafeDesc}
-                                />
-                    
-                    </div>
-                    <div>
-                        rating
+                        <h3>Restaurant Name</h3>
                         <input type="text"
-                                    className="form-control"
-                                    value={this.state.Rating}
-                                    onChange={this.onChangeCafeRating}
-                                />
+                            className="form-control"
+                            value={this.state.Name}
+                            onChange={this.onChangeCafeName}
+                            onChangeText = {(text)=> this.setState({Name:text})} />
+                    </div>
+
+                    <div>
+                        <h3>Description</h3>
+                        <input type="text"
+                            className="form-control"
+                            value={this.state.Desc}
+                            onChange={this.onChangeCafeDesc}/>
+                    </div>
+
+                    <div>
+                        <h3>Rating (out of 10)</h3>
+                        <input type="text"
+                            className="form-control"
+                            value={this.state.Rating}
+                            onChange={this.onChangeCafeRating}/>
                     </div>
 
                     <div>
