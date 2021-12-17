@@ -19,6 +19,7 @@ class CafeRes extends Component
         this.ReloadData = this.ReloadData.bind(this);
     }
 
+    //reload data after review is edited
     ReloadData(){
         axios.get('http://localhost:4000/api/cafes')
         .then((response)=>{
@@ -30,11 +31,14 @@ class CafeRes extends Component
         
     } 
 
+    //instantiate netowrk request
     componentDidMount(){
-        axios.get('http://localhost:4000/api/cafes')//cafes
+        axios.get('http://localhost:4000/api/cafes')// http request to api
+        //response if everything is working correctly
         .then((response)=>{
             this.setState({mycafes: response.data})
         })
+        //error response
         .catch((error)=>{
             console.log(error);
         });
