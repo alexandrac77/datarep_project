@@ -5,13 +5,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 //server.js
-//add just under import section at the top of server,js
 // Serve the static files from the React app
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../build')));
 app.use('/static', express.static(path.join(__dirname, 'build//static')));
 
-
+//fix cors error
 app.use(cors());
 app.use(function(req, res, next) {
 res.header("Access-Control-Allow-Origin", "*");
@@ -31,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//connect to mongodb database
 const mongoose = require('mongoose');
 
 const strConnection = 'mongodb+srv://alex:unicorn@cluster1.d0lxv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
