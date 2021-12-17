@@ -6,7 +6,8 @@ import axios from 'axios';
 class Review extends Component {
     constructor(props) {
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        //bind to this instance
+        this.handleSubmit = this.handleSubmit.bind(this); 
         this.onChangeCafeName = this.onChangeCafeName.bind(this);
         this.onChangeCafeDesc = this.onChangeCafeDesc.bind(this);
         this.onChangeCafeRating = this.onChangeCafeRating.bind(this);
@@ -45,16 +46,22 @@ class Review extends Component {
             Rating: ''
         });
     }
+    
+    //update state of Name
     onChangeCafeName(event) {
         this.setState({
             Name: event.target.value
         })
     }
+    
+    //update state of Desc
     onChangeCafeDesc(event) {
         this.setState({
             Desc: event.target.value
         })
     }
+    
+    //update state of Rating
     onChangeCafeRating(event) {
         this.setState({
             Rating: event.target.value
