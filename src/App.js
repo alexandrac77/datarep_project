@@ -14,6 +14,7 @@ import {
 import CafeRes from './components/cafe_res';
 import Review from './components/review';
 import Edit from './components/edit';
+import Recipes from './components/recipes';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/cafe_res">Cafes & Restaurants</Nav.Link>
               <Nav.Link href="/review">Review</Nav.Link>
+              <Nav.Link href="/recipes">Recipes</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
@@ -35,6 +37,7 @@ class App extends Component {
           <Route path="/review"><Review></Review></Route>
           <Route path="/cafe_res"><CafeRes></CafeRes></Route>
           <Route path={"/edit/:id"} component={Edit}></Route>
+          <Route path="/recipes"><Recipes></Recipes></Route>
         </Switch>
       </div>
       </Router>
