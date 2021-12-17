@@ -9,6 +9,7 @@ class Edit extends Component {
         this.onChangeCafeName = this.onChangeCafeName.bind(this);
         this.onChangeCafeDesc = this.onChangeCafeDesc.bind(this);
         this.onChangeCafeRating = this.onChangeCafeRating.bind(this);
+        //initialise Name Desc rating to empty string
         this.state = {
             Name: '',
             Desc: '',
@@ -17,7 +18,7 @@ class Edit extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:4000/api/cafes/'+ this.props.match.params.id)
+        axios.get('http://localhost:4000/api/cafes/'+ this.props.match.params.id) //http request 
         .then((response)=>{
             this.setState({
                 Name:response.data.Name,
@@ -29,6 +30,7 @@ class Edit extends Component {
         .catch();
     }
 
+    //save changes when submit button is pressed
     handleSubmit(event) {
         console.log("Name: " +this.state.Name+
         " Desc: " + this.state.Desc +
@@ -44,7 +46,7 @@ class Edit extends Component {
         .then((response)=>{console.log(response)})
         .catch();
         
-
+        //prevent blank entry
         event.preventDefault();
         this.setState({
             Name:'',
@@ -52,16 +54,20 @@ class Edit extends Component {
             Rating:''
         });
     }
+    
+    //set name to user input
     onChangeCafeName(event) {
         this.setState({
             Name: event.target.value
         })
     }
+    //set description to user input
     onChangeCafeDesc(event) {
         this.setState({
             Desc: event.target.value
         })
     }
+    //set rating to user input
     onChangeCafeRating(event){
         this.setState({
             Rating: event.target.value
