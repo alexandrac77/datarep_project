@@ -17,7 +17,7 @@ class Recipes extends Component {
                 <h4 style={{color:'Olive'}}>click on the image to be redirected to the recipe</h4>
                 <br/><br/><br/>
 
-
+                //link within image so when image is pressed, it redirects to website containing recipe
                 <a href="https://www.bbcgoodfood.com/recipes/raw-lemon-cheesecake">
                 <img src={lemon}></img></a>
                 <a href="https://www.bbcgoodfood.com/recipes/vegan-cherry-almond-brownies">
